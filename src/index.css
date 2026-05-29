@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --bg: #0d0e12;
+  --text: #f3f4f6;
+  --muted: #9ca3af;
+  --accent: #6366f1;
+  --accent-soft: rgba(99, 102, 241, 0.12);
+  --card: #15171e;
+  --shadow: 0 18px 45px rgba(0, 0, 0, 0.6);
+}
+
+[data-theme="dark"] {
+  --bg: #0a0a0a;
+  --text: #ffffff;
+  --muted: #9ca3af;
+  --accent: #6366f1;
+  --accent-soft: rgba(99, 102, 241, 0.15);
+  --card: rgba(255, 255, 255, 0.02);
+  --shadow: 0 18px 45px rgba(0, 0, 0, 0.9);
+}
+
+@theme {
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", sans-serif;
+  --color-brand-bg: var(--bg);
+  --color-brand-text: var(--text);
+  --color-brand-muted: var(--muted);
+  --color-brand-accent: var(--accent);
+  --color-brand-accent-soft: var(--accent-soft);
+  --color-brand-card: var(--card);
+}
+
+/* Custom scrolling & smoother typography transitions */
+html {
+  scroll-behavior: smooth;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+/* Grid background accent overlay */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: linear-gradient(to right, rgba(31, 79, 255, 0.04) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(31, 79, 255, 0.04) 1px, transparent 1px);
+}
+
+[data-theme="dark"] .bg-grid-pattern {
+  background-image: linear-gradient(to right, rgba(111, 140, 255, 0.03) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(111, 140, 255, 0.03) 1px, transparent 1px);
+}
